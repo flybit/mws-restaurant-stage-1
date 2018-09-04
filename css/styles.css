@@ -46,10 +46,15 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
-main#maincontent {
+div.index-page-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+}
+
+/* This is hidden by default */
+h2.filter-no-results-title {
+	display: none;
 }
 
 /* Content below this line is identical to the original CSS */

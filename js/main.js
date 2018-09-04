@@ -72,7 +72,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  * Initialize leaflet map, called from HTML.
  */
 initMap = () => {
-  self.newMap = L.map('map', {
+  self.newMap = L.map('index-page-map', {
         center: [40.722216, -73.987501],
         zoom: 12,
         scrollWheelZoom: false
@@ -130,7 +130,7 @@ updateRestaurants = () => {
 resetRestaurants = (restaurants) => {
   // Remove all restaurants
   self.restaurants = [];
-  const ul = document.getElementById('restaurants-list');
+  const ul = document.getElementsByClassName('restaurants-list')[0];
   ul.innerHTML = '';
 
   // Remove all map markers
@@ -145,7 +145,7 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
-  const ul = document.getElementById('restaurants-list');
+  const ul = document.getElementsByClassName('restaurants-list')[0];
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });

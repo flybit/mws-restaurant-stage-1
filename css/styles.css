@@ -68,16 +68,23 @@ nav h1 {
 
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: 12pt;
   font-weight: 200;
-	/* TODO: make this 10px at the next breakpoint */
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   text-transform: uppercase;
 }
 
+main {
+	width: 100%;
+}
+
+div.filter-options-and-results {
+	width: 100%;
+}
 
 /* Flexbox layout */
 div.index-page-container {
+		width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -209,8 +216,17 @@ footer {
 		display: flex;
 		flex-wrap: wrap;
 	}
+
 	.restaurants-list li {
 		width: 300px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	/* Bigger title */
+	nav h1 a {
+		font-size: 20px;
+		letter-spacing: 7px;
 	}
 }
 
@@ -219,6 +235,12 @@ footer {
 	/* No scroll bars on the page */
 	html, body {
 		height: 100vh;
+	}
+
+	/* Bigger title */
+	nav h1 a {
+		font-size: 30px;
+		letter-spacing: 10px;
 	}
 
 	/* Map, on the left, 40% width */
@@ -231,13 +253,18 @@ footer {
 	}
 
   /* Wrap filter options and results in the same colum */
-	.filter-options-and-results {
+	div.filter-options-and-results {
 		width: 60%;
 	}
 
 	.filter-results {
+		width: 100%;
 		height: calc(100vh - 258px);
 		overflow: auto;
+	}
+
+	.filter-results ul {
+		width: 100%;
 	}
 }
 

@@ -86,6 +86,9 @@ initMap = () => {
     id: 'mapbox.streets'
   }).addTo(newMap);
 
+  // Make the map unfocusable
+  document.getElementById('home-page-map').tabIndex = -1;
+
   updateRestaurants();
 }
 /* window.initMap = () => {

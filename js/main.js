@@ -154,6 +154,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     noResultsTitle.classList.remove('hidden');
   } else {
     resultsTitle.classList.remove('hidden');
+    document.getElementById('result-count').textContent = restaurants.length;
   }
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));

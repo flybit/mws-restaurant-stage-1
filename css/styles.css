@@ -17,17 +17,19 @@ img {
 /* Fonts */
 body, td, th, p, ul, li, h1, h2, h3, h4, h5, h6 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
 	color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 20px;
+body, td, th, p, ul, li {
+	font-size: 12px;
 }
 
-body,td,th,p {
-	/* ??? */
-	line-height: 1.5;
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+.div {
+	box-sizing: content-box;
 }
 
 body {
@@ -36,6 +38,7 @@ body {
 	position:relative;
 }
 
+/* Links */
 a {
 	color: orange;
 	text-decoration: none;
@@ -46,15 +49,75 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
+/* Navigation */
+nav {
+  width: 100%;
+  height: 80px;
+  background-color: #252831;
+  text-align: center;
+}
+
+/* To align vertically in the div */
+nav h1 {
+	line-height: 80px;
+}
+
+nav h1 a {
+  color: #fff;
+  font-size: 14pt;
+  font-weight: 200;
+	/* TODO: make this 10px at the next breakpoint */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+
+/* Flexbox layout */
 div.index-page-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 
-/* This is hidden by default */
-h2.filter-no-results-title {
+/* Filter options */
+
+/* "Not-found" message is hidden by default */
+.filter-no-results-title {
 	display: none;
+}
+
+.filter-options {
+  width: 100%;
+  background-color: #3397DB;
+  align-items: center;
+	padding: 20px 0px;
+}
+
+.filter-options-title {
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+	margin: 0px 20px 20px;
+}
+
+.filter-options select {
+  background-color: white;
+  border: 0;
+  font-size: 11pt;
+  height: 35px;
+  width: calc(50% - 27px);
+}
+
+.filter-options-select:first-of-type {
+	margin-left: 20px;
+}
+
+.filter-options-select + .filter-options-select {
+	margin-left: 10px;
+}
+
+.filter-options-select:last-of-type {
+	margin-right: 20px;
 }
 
 /* Content below this line is identical to the original CSS */
@@ -76,23 +139,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-align: center;
   text-transform: uppercase;
 }
-/* ====================== Navigation ====================== */
-nav {
-  width: 100%;
-  height: 80px;
-  background-color: #252831;
-  text-align:center;
-}
-nav h1 {
-  margin: auto;
-}
-nav h1 a {
-  color: #fff;
-  font-size: 14pt;
-  font-weight: 200;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-}
+
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
@@ -130,31 +177,6 @@ nav h1 a {
   height: 400px;
   width: 100%;
   background-color: #ccc;
-}
-/* ====================== Restaurant Filtering ====================== */
-.filter-options {
-  width: 100%;
-  height: 50px;
-  background-color: #3397DB;
-  align-items: center;
-}
-.filter-options h2 {
-  color: white;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1;
-  margin: 0 20px;
-}
-.filter-options select {
-  background-color: white;
-  border: 1px solid #fff;
-  font-family: Arial,sans-serif;
-  font-size: 11pt;
-  height: 35px;
-  letter-spacing: 0;
-  margin: 10px;
-  padding: 0 10px;
-  width: 200px;
 }
 
 /* ====================== Restaurant Listing ====================== */

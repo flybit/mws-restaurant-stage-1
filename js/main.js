@@ -72,7 +72,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
  * Initialize leaflet map, called from HTML.
  */
 initMap = () => {
-  self.newMap = L.map('index-page-map', {
+  self.newMap = L.map('home-page-map', {
         center: [40.722216, -73.987501],
         zoom: 12,
         scrollWheelZoom: false

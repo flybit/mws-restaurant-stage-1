@@ -23,16 +23,12 @@ body, td, th, p, ul, li, h1, h2, h3, h4, h5, h6 {
 	color: #333;
 }
 
-body, td, th, p, ul, li {
+body, td, th, p, ul, li. h1, h2, h3, h4, h5, h6 {
 	font-size: 12px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	margin: 0;
-}
-
 .div {
-	box-sizing: content-box;
+	/* box-sizing: content-box; */
 }
 
 body {
@@ -92,9 +88,8 @@ div.index-page-container {
 
 /* Filter options */
 
-
 /* "Not-found" message is hidden by default */
-.filter-no-results-title {
+.hidden {
 	display: none;
 }
 
@@ -117,7 +112,7 @@ div.index-page-container {
   border: 0;
   font-size: 11pt;
   height: 35px;
-  width: calc(50% - 27px);
+  width: calc(50% - 28px);
 }
 
 .filter-options-select:first-of-type {

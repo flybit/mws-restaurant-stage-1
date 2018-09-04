@@ -146,6 +146,15 @@ resetRestaurants = (restaurants) => {
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementsByClassName('restaurants-list')[0];
+  const resultsTitle = document.getElementsByClassName('filter-results-title')[0];
+  const noResultsTitle = document.getElementsByClassName('filter-no-results-title')[0];
+  resultsTitle.classList.add('hidden');
+  noResultsTitle.classList.add('hidden');
+  if (!restaurants.length) {
+    noResultsTitle.classList.remove('hidden');
+  } else {
+    resultsTitle.classList.remove('hidden');
+  }
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });

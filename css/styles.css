@@ -384,4 +384,9 @@ div.second-column {
 	.filter-results ul {
 		width: 100%;
 	}
+
+	div.second-column {
+		height: calc(100vh - 190px);
+		overflow: auto;
+	}
 }

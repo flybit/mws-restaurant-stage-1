@@ -1,44 +1,67 @@
 @charset "utf-8";
 /* CSS Document */
 
-body,td,th,p{
+/* Base rules */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Make all images full-width */
+img {
+    width: 100%;
+}
+
+/* Fonts */
+body, td, th, p, ul, li, h1, h2, h3, h4, h5, h6 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
 	color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 20px;
+}
+
+body,td,th,p {
+	/* ??? */
 	line-height: 1.5;
 }
+
 body {
 	background-color: #fdfdfd;
-	margin: 0;
+	/* ??? */
 	position:relative;
 }
-ul, li {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
-	color: #333;
-}
+
 a {
 	color: orange;
 	text-decoration: none;
 }
+
 a:hover, a:focus {
 	color: #3397db;
 	text-decoration: none;
 }
-a img{
-	border: none 0px #fff;
+
+main#maincontent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
-h1, h2, h3, h4, h5, h6 {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0 0 20px;
-}
+
+/* Content below this line is identical to the original CSS */
+
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 #maincontent {
   background-color: #f3f3f3;
-  min-height: 100%;
 }
+
 #footer {
   background-color: #444;
   color: #aaa;

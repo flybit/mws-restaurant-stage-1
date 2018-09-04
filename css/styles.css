@@ -79,7 +79,7 @@ div.filter-options-and-results {
 }
 
 /* Flexbox layout */
-.home div.container {
+.home div.container, .info div.container {
 		width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -206,65 +206,6 @@ footer {
 }
 
 
-/* Breakpoints for different viewport sizes */
-
-/* First breakpoint: fix card size and start displaying multiple columns */
-@media screen and (min-width: 340px) {
-	.restaurants-list {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	.restaurants-list li {
-		width: 300px;
-	}
-}
-
-@media screen and (min-width: 600px) {
-	/* Bigger title */
-	nav h1 a {
-		font-size: 20px;
-		letter-spacing: 7px;
-	}
-}
-
-/* Second breakpoint: map on the left, filter options and results on the right */
-@media screen and (min-width: 1600px) {
-	/* No scroll bars on the page */
-	html, body {
-		height: 100vh;
-	}
-
-	/* Bigger title */
-	nav h1 a {
-		font-size: 30px;
-		letter-spacing: 10px;
-	}
-
-	/* Map, on the left, 40% width */
-	.home #map-section, .info #map-section {
-		width: 40%;
-		min-height: 100%;
-	}
-	#home-page-map, #info-page-map {
-		height: 100%;
-	}
-
-  /* Wrap filter options and results in the same colum */
-	div.filter-options-and-results {
-		width: 60%;
-	}
-
-	.filter-results {
-		width: 100%;
-		height: calc(100vh - 258px);
-		overflow: auto;
-	}
-
-	.filter-results ul {
-		width: 100%;
-	}
-}
 
 /* Breadcrumbs on info page */
 
@@ -304,6 +245,9 @@ footer {
 
 
 /* Restaurant info */
+div.second-column {
+	width: 100%;
+}
 
 #restaurant-name {
   color: #f18200;
@@ -355,13 +299,14 @@ footer {
 #reviews-list {
   margin: 0;
   padding: 0;
+	width: 100%;
 }
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
-  margin: 0 0 30px;
+  margin: 0 auto 30px;
   overflow: hidden;
   padding: 20px;
   position: relative;
@@ -372,4 +317,71 @@ footer {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* Breakpoints for different viewport sizes */
+
+/* First breakpoint: fix card size and start displaying multiple columns */
+@media screen and (min-width: 340px) {
+	.restaurants-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.restaurants-list li {
+		width: 300px;
+	}
+}
+
+@media screen and (min-width: 600px) {
+	/* Bigger title */
+	nav h1 a {
+		font-size: 20px;
+		letter-spacing: 7px;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	/* Fix the width of the review entries */
+	#reviews-list li {
+		width: 825px;
+	}
+}
+
+/* Second breakpoint: map on the left, filter options and results on the right */
+@media screen and (min-width: 1500px) {
+	/* No scroll bars on the page */
+	html, body {
+		height: 100vh;
+	}
+
+	/* Bigger title */
+	nav h1 a {
+		font-size: 30px;
+		letter-spacing: 10px;
+	}
+
+	/* Map, on the left, 40% width */
+	.home #map-section, .info #map-section {
+		width: 40%;
+		min-height: 100%;
+	}
+	#home-page-map, #info-page-map {
+		height: 100%;
+	}
+
+  /* Wrap filter options and results in the same colum */
+	div.filter-options-and-results, div.second-column {
+		width: 60%;
+	}
+
+	.filter-results {
+		width: 100%;
+		height: calc(100vh - 258px);
+		overflow: auto;
+	}
+
+	.filter-results ul {
+		width: 100%;
+	}
 }

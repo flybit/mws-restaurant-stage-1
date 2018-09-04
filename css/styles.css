@@ -7,6 +7,11 @@
 	padding: 0;
 }
 
+body {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 body, html {
     width: 100%;
     height: 100%;
@@ -180,8 +185,12 @@ div.filter-results > h2 {
   text-transform: uppercase;
 }
 
+header {
+	width: 100%;
+}
 
-#footer {
+footer {
+	width: 100%;
   background-color: #444;
   color: #aaa;
   font-size: 8pt;
@@ -190,6 +199,50 @@ div.filter-results > h2 {
   text-align: center;
   text-transform: uppercase;
 }
+
+
+/* Breakpoints for different viewport sizes */
+
+/* First breakpoint: fix card size and start displaying multiple columns */
+@media screen and (min-width: 340px) {
+	.restaurants-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.restaurants-list li {
+		width: 300px;
+	}
+}
+
+/* Second breakpoint: map on the left, filter options and results on the right */
+@media screen and (min-width: 1600px) {
+	/* No scroll bars on the page */
+	html, body {
+		height: 100vh;
+	}
+
+	/* Map, on the left, 40% width */
+	#index-page-map-section {
+		width: 40%;
+		min-height: 100%;
+	}
+	#index-page-map {
+		height: 100%;
+	}
+
+  /* Wrap filter options and results in the same colum */
+	.filter-options-and-results {
+		width: 60%;
+	}
+
+	.filter-results {
+		height: calc(100vh - 258px);
+		overflow: auto;
+	}
+}
+
+
+
 
 /* Content below this line is identical to the original CSS */
 
@@ -227,7 +280,6 @@ div.filter-results > h2 {
     color: #01447e;
     text-decoration: underline;
 }
-
 
 
 /* ====================== Restaurant Details ====================== */

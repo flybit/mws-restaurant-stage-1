@@ -18,11 +18,11 @@
   <main>
     <div class="index-page-container">
 
-      <section id="map">
-        <div class="index-page-map"></div>
+      <section id="index-page-map-section">
+        <div id="index-page-map"></div>
       </section>
 
-      <section id="filter-options">
+      <section id="filter-options-section">
         <div class="filter-options">
           <h2 class="filter-options-title">Filter Options</h2>
           <select class="filter-options-select" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -34,10 +34,13 @@
         </div>
       </section>
 
-      <section id="filter-results">
-        <h2 class="filter-results-title">Filter Results</h2>
-        <h2 class="filter-no-results-title">No restraunts match the filter options. Please try again.</h2>
-        <ul class="restaurants-list"></ul>
+
+      <section id="filter-results-section">
+        <div class="filter-results">
+          <h2 class="filter-results-title">Filter Results</h2>
+          <h2 class="filter-no-results-title">No restraunts match the filter options. Please try again.</h2>
+          <ul class="restaurants-list"></ul>
+        </div>
       </section>
 
     </div>

@@ -341,15 +341,15 @@ div.second-column {
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 900px) {
 	/* Fix the width of the review entries */
 	#reviews-list li {
-		width: 825px;
+		width: 725px;
 	}
 }
 
 /* Second breakpoint: map on the left, filter options and results on the right */
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1300px) {
 	/* No scroll bars on the page */
 	html, body {
 		height: 100vh;

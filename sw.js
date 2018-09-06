@@ -20,26 +20,21 @@ var FILES_TO_CACHE = [
     '/sw.js'
 ];
 
-// Always try to fetch from network and put the response to cache on success.
-// If this fails, return previously cached data, if any. Otherwise, respond with error.
+async function cacheAllResources() {
+    let c = await caches.open(CACHE_NAME);
+    return c.addAll(FILES_TO_CACHE);
+}
+
+// Cache all files on install
+self.addEventListener('install', e => {
+    e.waitUntil(cacheAllResources());
+});
+
 self.addEventListener('fetch', event => event.respondWith(fetchHandler(event)));
     
 async function fetchHandler(event) {
-  // Try fetching from the server
-  console.log('Trying to fetch ' + event.request.url);
-  const fetchResp = await fetch(event.request).catch(r => r);
+  const cacheUrl = event.request.url.split('?')[0];
   const cache = await caches.open(CACHE_NAME);
-  if (!fetchResp || (fetchResp.status !== 200 && fetchResp.type !== 'opaque')) {
-    console.log('Fetch failed, trying cache');
-    // Failure, try the cache
-    const cacheReq = event.request.clone();
-    const cacheResp = await cache.match(cacheReq);
-    // Return cacheResp, or failed response
-    return cacheResp || fetchResp;
-  }
-  // Success
-  console.log('Success, caching and returning reponse');
-  const respToCache = fetchResp.clone();
-  cache.put(event.request, respToCache);
-  return fetchResp;
+  const cacheResp = await cache.match(cacheUrl);
+  return cacheResp || fetch(event.request);
 }
